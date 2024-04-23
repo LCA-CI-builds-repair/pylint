@@ -7,7 +7,9 @@ Release date: 2013-04-25
 * #74013: new E1310[bad-str-strip-call] message warning when a call to a
   {l,r,}strip method contains duplicate characters (patch by Torsten Marek)
 
-* #123233: new E0108[duplicate-argument-name] message reporting duplicate
+* #123233: new E0108[d* fix #4683: Non-ASCII characters count double if utf8 encoded
+* fix #9018: When using defining-attr-method, method order matters
+* fix #4595: Comma not followed by a space should not occur on trailing comma in list/tuple/dict definition-argument-name] message reporting duplicate
   argument names
 
 * #81378: emit W0120[useless-else-on-loop] for loops without break
