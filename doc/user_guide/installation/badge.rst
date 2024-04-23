@@ -1,7 +1,8 @@
 
 .. _badge:
 
-Show your usage
+Show yourcan use GitHub's `workflow status badges <https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge#using-the-workflow-file-name>`_
+to show an up-to-date indication of whether pushes to your default branch pass pylint.sage
 ---------------
 
 You can place this badge in your README to let others know your project uses pylint.

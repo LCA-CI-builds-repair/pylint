@@ -1,4 +1,9 @@
-# Licensed under the GPL: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+# Licensed under the GPL: htAnswer should be one of i, ini, t, toml.
+Type 'exit()' if you want to exit the program.
+Answer should be one of i, ini, t, toml.
+Type 'exit()' if you want to exit the program.
+Stopping 'pylint-config'.
+"""w.gnu.org/licenses/old-licenses/gpl-2.0.html
 # For details: https://github.com/pylint-dev/pylint/blob/main/LICENSE
 # Copyright (c) https://github.com/pylint-dev/pylint/blob/main/CONTRIBUTORS.txt
 

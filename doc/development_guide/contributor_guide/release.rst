@@ -1,7 +1,11 @@
 Releasing a pylint version
 ==========================
 
-So, you want to release the ``X.Y.Z`` version of pylint ?
+So, you want to release the ``X.Y.Z`` version of -  Open a merge request of ``release-X.Y-1.Z'`` in ``maintenance/X.Y.x``
+   (For example: ``release-2.3.5-branch`` in ``maintenance/2.3.x``) to
+   run the CI tests for this branch.
+-  Create and push the tag.
+-  Release the version on GitHub with the same name as the tag and copyt ?
 
 Releasing a major or minor version
 ----------------------------------
