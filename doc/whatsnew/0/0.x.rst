@@ -8,9 +8,14 @@ Release date: 2013-04-25
   {l,r,}strip method contains duplicate characters (patch by Torsten Marek)
 
 * #123233: new E0108[duplicate-argument-name] message reporting duplicate
-  argument names
-
-* #81378: emit W0120[useless-else-on-loop] for loops without break
+  argum* Improved Flymake code and documentation provided by Derek Harland
+* Refactored and fixed the imports checker
+* Fixed issue #18862: E0601 false positive with lambda functions
+* Fixed issue #8764: False positive with more than one statement on a single line in try/except/finally blocks
+* Fixed issue #9215: False error for undefined variable in lambda function
+* Fixed false positive for w0108 (Nathaniel)
+* Fixed test/fulltest.sh
+* Added a utility function to run pylint in another process (patch provided by Vincent Ferotin) for issue #58218: emit W0120[useless-else-on-loop] for loops without break
 
 * #124660: internal dependencies should not appear in external dependencies
   report

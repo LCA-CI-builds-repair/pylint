@@ -5,7 +5,15 @@
 On module packages or directories
 ---------------------------------
 
-Pylint is meant to be called from the command line. The usage is ::
+Pylint is meant to be called from the command l| exit code | meaning                   |
+| --------- | ------------------------- |
+| 0         | no error                  |
+| 1         | fatal message issued      |
+| 2         | error message issued      |
+| 4         | warning message issued    |
+| 8         | refactor message issued   |
+| 16        | convention message issued  |
+| 32        | usage error               |is ::
 
    pylint [options] modules_or_packages
 

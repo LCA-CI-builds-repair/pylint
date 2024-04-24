@@ -21,7 +21,11 @@ example is very close too.
 
 The required ``astroid`` version is now 3.0.0. See the
 `astroid changelog <https://pylint.readthedocs.io/projects/astroid/en/latest/changelog.html#what-s-new-in-astroid-3-0-0>`_
-for additional fixes, features, and performance improvements applicable to pylint.
+for additional fixes, features, and perf- Refs #8464 (`#8464 <https://github.com/pylint-dev/pylint/issues/8464>`_): Following a deprecation period, ``MessageTest``'s ``end_line`` and ``end_col_offset`` must be accurate in functional tests (for Python 3.8 or above on CPython, and for Python 3.9 or superior on PyPy).
+
+- Refs #8466 (`#8466 <https://github.com/pylint-dev/pylint/issues/8466>`_): Following a deprecation period, the ``do_exit`` argument of the ``Run`` class (and of the ``_Run`` class in testutils) was removed.
+
+- Refs #8472 (`#8472 <https://github.com/pylint-dev/pylint/issues/8472>`_): Following a deprecation period, the ``py_version`` argument of the ``MessageDefinition.may_be_emitted`` function is now required. The most likely solutionents applicable to pylint.
 
 Our code is now fully typed. The ``invalid-name`` message no longer checks for a minimum length of 3 characters by default. Dependencies
 like wrapt or setuptools were removed.

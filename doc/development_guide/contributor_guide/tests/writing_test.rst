@@ -1,5 +1,15 @@
-.. _writing_tests:
+.. =============
 
+Pylint uses three types of tests: unittests, functional tests, and primer tests.
+
+- :ref:`Unittest tests <writing_unittests>` can be found in ``pylint/tests``. These tests are primarily for internal use, and you may not need to write any unless you are working on Pylint's core functionality.
+- :ref:`Global functional tests <writing_functional_tests>` can be found in ``pylint/tests/functional``. These tests focus on validating whether Pylint emits the correct messages.
+- :ref:`Configuration's functional tests <writing_config_functional_tests>` can be found in ``pylint/tests/config/functional``. These tests are designed to evaluate Pylint's configuration loading process.
+- :ref:`Primer tests <primer_tests>` involve suggesting new external repositories to check but typically require no action.
+
+.. _writing_unittests:
+
+Unittest Tests
 Writing tests
 =============
 

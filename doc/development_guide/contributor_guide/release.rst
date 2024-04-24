@@ -1,9 +1,21 @@
 Releasing a pylint version
 ==========================
 
-So, you want to release the ``X.Y.Z`` version of pylint ?
-
-Releasing a major or minor version
+So, you want to release the ``X.Y.Z`` version   ``pip3 install -r requirements_test.txt``
+-  To bump the version and release, use the command ``tbump X.Y-1.Z --no-push``.
+   (For example: ``tbump 2.3.5 --no-push``)
+-  Verify the changes visually with ``git show``.
+-  Initiate a merge request for ``release-X.Y-1.Z'`` into ``maintenance/X.Y.x``
+   (For example: ``release-2.3.5-branch`` into ``maintenance/2.3.x``) to trigger
+   the CI tests for this branch.
+-  Create and push the tag.
+-  Release the version on GitHub with the same name as the tag and paste the changelog
+   from the ReadtheDocs generated documentation in the pull request pipeline description.
+   This action triggers the PyPI release.
+-  Merge the ``maintenance/X.Y.x`` branch into the main branch. Ensure that the main
+   branch includes the changelog for ``X.Y-1.Z+1`` (For example: ``v2.3.6``). This merge
+   is necessary for the ``pre-commit autoupdate`` to work with pylint.
+-  Resolve version conflicts appropriately or update the version to ``X.Y.0-devZ``easing a major or minor version
 ----------------------------------
 
 **Before releasing a major or minor version check if there are any

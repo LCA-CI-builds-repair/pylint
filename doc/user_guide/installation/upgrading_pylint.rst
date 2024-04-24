@@ -1,6 +1,6 @@
 .. _upgrading_pylint:
 
-Upgrading pylint
+You may need to modify the command being executed or adjust the plugin and editor integration.rading pylint
 ================
 
 You should probably set the version of pylint in your development environment in order to

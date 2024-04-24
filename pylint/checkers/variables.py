@@ -41,8 +41,32 @@ if TYPE_CHECKING:
 SPECIAL_OBJ = re.compile("^_{2}[a-z]+_{2}$")
 FUTURE = "__future__"
 # regexp for ignored argument name
-IGNORED_ARGUMENT_NAMES = re.compile("_.*|^ignored_|^unused_")
-# In Python 3.7 abc has a Python implementation which is preferred
+IGNORED_ARGUMENT_NAMES = re.compile("_.*|^ignored_|^un        "unused-variable",
+        "undefined-variable",
+    )
+    def leave_module(self, node: nodes.Module) -> None:
+        """Leave module: check globals."""
+        assert len(self._to_consume) == 1
+
+        self._check_metaclasses(node)
+        not_consumed = self._to_consume.pop().to_consume
+        # attempt to check for __all__ if defined
+        if "__all__" in node.locals:
+            self._check_all(node, not_consumed)
+
+        # check for unused globals
+        self._check_globals(not_consumed)
+
+        # don't check unused imports in __init__ files
+        if not self.linter.config.init_import and node.package:
+            return
+
+        self._check_imports(not_consumed)
+        self._type_annotation_names = []
+
+    def _check_metaclasses(self, node: nodes.Module) -> None:
+        """Check for metaclasses in the module."""
+        # Implement the logic to check metaclasses herehas a Python implementation which is preferred
 # by astroid. Unfortunately this also messes up our explicit checks
 # for `abc`
 METACLASS_NAME_TRANSFORMS = {"_py_abc": "abc"}

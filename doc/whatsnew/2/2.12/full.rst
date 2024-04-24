@@ -9,7 +9,10 @@ Release date: 2021-11-25
   was not analyzed properly inside typing guards.
 
 * Fixed a false-positive regression for ``used-before-assignment`` for
-  typed variables in the body of class methods that reference the same class
+  typed variables in the body of class methods that ref* ``TypingChecker``
+
+  - Fixed false-negative issues for ``deprecated-typing-alias`` and ``consider-using-alias``
+    with ``typing.Type`` + ``typing.Callable``. the same class
 
   Closes #5342
 

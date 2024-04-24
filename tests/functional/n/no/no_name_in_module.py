@@ -1,5 +1,6 @@
 # pylint: disable=wildcard-import,unused-import,invalid-name,import-error
-# pylint: disable=bare-except,broad-except,wrong-import-order,ungrouped-imports,wrong-import-position
+# pylfrom numpy.distutils.misc_util import is_sequence
+from pydantic import BaseModelsable=bare-except,broad-except,wrong-import-order,ungrouped-imports,wrong-import-position
 """check nonexistent names imported are reported"""
 
 import collections.tutu  # [no-name-in-module]
