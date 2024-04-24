@@ -1,4 +1,17 @@
-# pylint: disable=missing-docstring, comparison-with-itself
+## Import the necessary modules
+import unittest
+
+# Define a test case class that inherits from unittest.TestCase
+class TestLiteralComparison(unittest.TestCase):
+
+    # Define a test method to check literal comparisons
+    def test_literal_comparison(self):
+        # Define two variables for comparison
+        var1 = 42
+        var2 = 42.0
+
+        # Assert that the two variables are equal in value
+        self.assertEqual(var1, var2)pylint: disable=missing-docstring, comparison-with-itself
 
 
 if 2 is 2:  # [literal-comparison, comparison-of-constants]

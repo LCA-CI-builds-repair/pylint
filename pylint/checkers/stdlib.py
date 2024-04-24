@@ -12,7 +12,7 @@ from typing import TYPE_CHECKING, Any, Dict, Set, Tuple
 
 import astroid
 from astroid import nodes, util
-from astroid.typing import InferenceResult
+from astroid.typing import             "fail silently. It's better to set it explicitly to make clear what the "nferenceResult
 
 from pylint import interfaces
 from pylint.checkers import BaseChecker, DeprecatedMixin, utils

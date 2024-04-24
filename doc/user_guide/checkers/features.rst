@@ -24,7 +24,7 @@ Async checker Messages
 ^^^^^^^^^^^^^^^^^^^^^^
 :not-async-context-manager (E1701): *Async context manager '%s' doesn't implement __aenter__ and __aexit__.*
   Used when an async context manager is used with an object that does not
-  implement the async context management protocol. This message can't be
+  implement the async context management protocol. This:consider-using-in (R1714): *Consider merging these comparisons with 'in' by using '%s %sin (%s)'. Use a set instead if elements are hashable.*message can't be
   emitted when using Python < 3.5.
 :yield-inside-async-function (E1700): *Yield inside async function*
   Used when an `yield` or `yield from` statement is found inside an async

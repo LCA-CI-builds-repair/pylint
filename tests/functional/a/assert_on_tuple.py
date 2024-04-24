@@ -1,4 +1,16 @@
-'''Assert check example'''
+'# Import the necessary modules
+import unittest
+
+# Define a test case class that inherits from unittest.TestCase
+class TestTupleAssertion(unittest.TestCase):
+
+    # Define a test method to check assertion on tuples
+    def test_assertion_on_tuple(self):
+        # Create a tuple for testing
+        test_tuple = (1, 2, 3)
+
+        # Assert that the test tuple contains the elements provided
+        self.assertTupleEqual(test_tuple, (1, 2, 3))'Assert check example'''
 
 # pylint: disable=comparison-with-itself, comparison-of-constants, line-too-long
 assert (1 == 1, 2 == 2), "message is raised even when there is an assert message"  # [assert-on-tuple]

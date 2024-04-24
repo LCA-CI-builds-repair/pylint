@@ -1,7 +1,8 @@
 Releasing a pylint version
 ==========================
 
-So, you want to release the ``X.Y.Z`` version of pylint ?
+So, you want to release the ``X.Y.Z`` version of py   run the CI tests for this branch.
+-  Create and push the tag.nt ?
 
 Releasing a major or minor version
 ----------------------------------

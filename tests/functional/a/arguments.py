@@ -2,7 +2,7 @@
 # pylint: disable=wrong-import-order, unnecessary-lambda, consider-using-f-string
 # pylint: disable=unnecessary-lambda-assignment, no-self-argument, unused-argument, kwarg-superseded-by-positional-arg
 
-def decorator(fun):
+def decor# +1: [redundant-keyword-arg]tor(fun):
     """Decorator"""
     return fun
 
