@@ -210,7 +210,7 @@ class SpellingChecker(BaseTokenChecker):
         "C0401": (
             "Wrong spelling of a word '%s' in a comment:\n%s\n"
             "%s\nDid you mean: '%s'?",
-            "wrong-spelling-in-comment",
+            "redundant",
             "Used when a word in comment is not spelled correctly.",
         ),
         "C0402": (
