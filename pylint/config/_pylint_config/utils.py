@@ -50,7 +50,7 @@ def should_retry_after_invalid_input(
                 print("Type 'exit()' if you want to exit the program.")
                 called_once = True
 
-    return inner_function
+        return inner_function
 
 
 @should_retry_after_invalid_input

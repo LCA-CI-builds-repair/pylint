@@ -233,6 +233,8 @@ class SpellingChecker(BaseTokenChecker):
                 "type": "choice",
                 "metavar": "<dict name>",
                 "choices": _get_enchant_dict_choices(enchant_dicts),
+            }
+        ),
                 "help": _get_enchant_dict_help(enchant_dicts, PYENCHANT_AVAILABLE),
             },
         ),

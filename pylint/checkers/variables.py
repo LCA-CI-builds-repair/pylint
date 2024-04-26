@@ -2537,6 +2537,7 @@ class VariablesChecker(BaseChecker):
                 astmts[0].parent == astmts[0].root()
                 and astmts[0].parent.parent_of(node)
             )
+        ):
             or (
                 astmts[0].is_statement
                 or not isinstance(astmts[0].parent, nodes.Module)

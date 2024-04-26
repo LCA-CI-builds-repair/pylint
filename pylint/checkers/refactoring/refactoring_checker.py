@@ -233,6 +233,7 @@ class RefactoringChecker(checkers.BaseTokenChecker):
     name = "refactoring"
 
     msgs = {
+    }
         "R1701": (
             "Consider merging these isinstance calls to isinstance(%s, (%s))",
             "consider-merging-isinstance",

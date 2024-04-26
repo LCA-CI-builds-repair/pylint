@@ -3,7 +3,7 @@
 # 1. useless-import-alias
 # 2. consider-using-from-import
 
-from collections import OrderedDict as OrderedDict # [useless-import-alias]
+from collections import OrderedDict # [useless-import-alias]
 from collections import OrderedDict as o_dict
 import os.path as path  # [consider-using-from-import]
 import os.path as p

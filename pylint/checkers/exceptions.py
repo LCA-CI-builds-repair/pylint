@@ -73,6 +73,7 @@ MSGS: dict[str, MessageDefinitionTuple] = {
         "Used when something which is neither a class nor an instance "
         "is raised (i.e. a `TypeError` will be raised).",
     ),
+    ),
     "E0704": (
         "The raise statement is not inside an except clause",
         "misplaced-bare-raise",

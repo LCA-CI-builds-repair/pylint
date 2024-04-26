@@ -270,9 +270,9 @@ class TestCheckParallelFramework:
         try:
             dill.dumps(linter)
             # TODO: 4.0: Fix this test by raising this assertion again
-            # raise AssertionError(
-            #     "Plugins loaded were pickle-safe! This test needs altering"
-            # )
+            raise AssertionError(
+                "Plugins loaded were pickle-safe! This test needs altering"
+            )
         except (KeyError, TypeError, PickleError, NotImplementedError):
             pass
 

@@ -174,6 +174,7 @@ class BasicChecker(_BasicChecker):
             "strings containing Python expressions "
             "from untrusted sources.",
         ),
+        ),
         "W0150": (
             "%s statement in finally block may swallow exception",
             "lost-exception",
