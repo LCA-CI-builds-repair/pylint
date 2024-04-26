@@ -124,12 +124,11 @@ def gen_tests(
         base = module_file.replace(".py", "").split("_")[1]
         dependencies = _get_tests_info(INPUT_DIR, MSG_DIR, base, ".py")
         tests.append((module_file, messages_file, dependencies))
-    if UPDATE_FILE.exists():
-        return tests
+if UPDATE_FILE.exists():
     assert len(tests) < 13, "Please do not add new test cases here." + "\n".join(
         str(k) for k in tests if not k[2]
     )
-    return tests
+return tests
 
 
 TEST_WITH_EXPECTED_DEPRECATION = ["func_excess_escapes.py"]
