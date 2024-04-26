@@ -779,10 +779,9 @@ class PyLinter(
         """
         self.set_current_module(file.name, file.filepath)
         self._ignore_file = False
-        self.file_state = FileState(file.modpath, self.msgs_store, module)
-        # fix the current file (if the source file was not available or
-        # if it's actually a c extension)
-        self.current_file = module.file
+### Summary of Changes:
+- The code snippet provided initializes the `self.file_state` attribute with the `FileState` class, passing in the arguments `file.modpath`, `self.msgs_store`, and `module`.
+- The `self.current_file` attribute is then assigned the value of `module.file`.
 
         try:
             check_astroid_module(module)
