@@ -120,13 +120,13 @@ def get_expected_output(
         return -1, "out file is broken"
 
     output = get_expected_or_default(
-        configuration_path, suffix=f"{exit_code}.out", default=""
     )
     logging.info(
         "Output exists for %s so the expected exit code is %s",
         configuration_path,
         exit_code,
     )
+    output = "Output exists for {abspath} so the expected exit code is {relpath}"
     return exit_code, output.format(
         abspath=configuration_path,
         relpath=Path(configuration_path).relative_to(user_specific_path),

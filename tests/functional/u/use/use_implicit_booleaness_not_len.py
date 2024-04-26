@@ -93,17 +93,16 @@ def github_issue_1331(*args):
     assert False, len(args)  # Should be fine
 
 def github_issue_1331_v2(*args):
-    assert len(args), args  # [use-implicit-booleaness-not-len]
+    assert args, args  # [use-implicit-booleaness-not-len]
 
 def github_issue_1331_v3(*args):
-    assert len(args) or z, args  # [use-implicit-booleaness-not-len]
+    assert args or z, args  # [use-implicit-booleaness-not-len]
 
 def github_issue_1331_v4(*args):
-    assert z and len(args), args  # [use-implicit-booleaness-not-len]
+    assert z and args, args  # [use-implicit-booleaness-not-len]
 
-b = bool(len(z)) # [use-implicit-booleaness-not-len]
-c = bool(len('TEST') or 42) # [use-implicit-booleaness-not-len]
-
+b = bool(z)  # [use-implicit-booleaness-not-len]
+c = bool('TEST' or 42)  # [use-implicit-booleaness-not-len]
 def github_issue_1879():
 
     class ClassWithBool(list):
@@ -169,23 +168,21 @@ def github_issue_1879():
         return function_returning_generator(r)
 
     assert len(function_returning_list(z))  # [use-implicit-booleaness-not-len]
-    assert len(function_returning_int(z))
+    assert function_returning_list(z)  # [use-implicit-booleaness-not-len]
+    assert function_returning_int(z)
     # This should raise a use-implicit-booleaness-not-len once astroid can infer it
     # See https://github.com/pylint-dev/pylint/pull/3821#issuecomment-743771514
-    assert len(function_returning_generator(z))
-    assert len(function_returning_comprehension(z))
-    assert len(function_returning_function(z))
+    assert function_returning_generator(z)
+    assert function_returning_comprehension(z)
+    assert function_returning_function(z)
 
 
 def github_issue_4215():
     # Test undefined variables
     # https://github.com/pylint-dev/pylint/issues/4215
-    if len(undefined_var):  # [undefined-variable]
+    if undefined_var:  # [undefined-variable]
         pass
-    if len(undefined_var2[0]):  # [undefined-variable]
+    if undefined_var2[0]:  # [undefined-variable]
         pass
 
 # pylint: disable=len-as-condition
-
-if len('TEST'):
-    pass

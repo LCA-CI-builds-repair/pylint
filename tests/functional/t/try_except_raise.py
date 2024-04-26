@@ -37,11 +37,10 @@ def ccc():
 
     try:
         raise BBBException("asdf")
-    except BBBException:
-        raise
     except AAAException:
         raise BBBException("raised from AAAException")
-
+    except BBBException:
+        raise
 
 def ddd():
     """try-except-raise test function"""

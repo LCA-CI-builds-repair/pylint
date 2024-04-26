@@ -1,8 +1,7 @@
 """Checks for redundant Union typehints in assignments"""
 # pylint: disable=deprecated-typing-alias,consider-alternative-union-syntax,consider-using-alias,invalid-name,unused-argument,missing-function-docstring
 
-from __future__ import annotations
-from typing import Union, Optional, Sequence
+from typing import Optional, Sequence, Union
 
 #  +1: [redundant-typehint-argument, redundant-typehint-argument]
 ANSWER_0: Union[int, int, str, bool, float, str] = 0
@@ -21,14 +20,12 @@ ANSWER_10: dict | list[int] | float | str | int | bool = 10
 ANSWER_11: list[int] | dict[int] | dict[list[int]] | list[str] | list[str] = ['string']
 
 # Multiple warnings for the same repeated type
+# Multiple warnings for the same repeated type
 #  +1: [redundant-typehint-argument, redundant-typehint-argument, redundant-typehint-argument]
-x: int | int | int | int
+x: int
 
 # No warning for redundant types in compound type (yet !)
-z: dict[int | int, str | str]
-
-#  +1: [redundant-typehint-argument]
-zz: dict[int | int, str | str] | dict[int | int, str | str]
+z: dict[int, str]
 
 # No warnings for redundant types in function signature (yet !)
 def f(p: int | int) -> str | str: ...

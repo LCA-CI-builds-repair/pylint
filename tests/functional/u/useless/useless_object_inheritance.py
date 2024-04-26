@@ -17,7 +17,7 @@ class C(B, object): # [useless-object-inheritance]
 class D(object, C, metaclass=abc.ABCMeta):   # [useless-object-inheritance]
     pass
 
-class E(D, C, object, metaclass=abc.ABCMeta):   # [useless-object-inheritance]
+class E(D, C, metaclass=abc.ABCMeta):   # [useless-object-inheritance]
     pass
 
 class F(A): # positive test case

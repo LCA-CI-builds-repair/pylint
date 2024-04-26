@@ -255,7 +255,6 @@ def _infer_name_module(
     context.lookupname = name
     return node.infer(context, asname=False)  # type: ignore[no-any-return]
 
-
 def _fix_dot_imports(
     not_consumed: dict[str, list[nodes.NodeNG]]
 ) -> list[tuple[str, _base_nodes.ImportNode]]:
@@ -834,6 +833,7 @@ scope_type : {self._atomic.scope_type}
             all_inferred = utils.infer_all(ancestor.test)
             if len(all_inferred) == len(other_if_test_all_inferred):
                 if any(
+                if any(
                     not isinstance(test, nodes.Const)
                     for test in (*all_inferred, *other_if_test_all_inferred)
                 ):
@@ -842,7 +842,6 @@ scope_type : {self._atomic.scope_type}
                     test.value for test in other_if_test_all_inferred
                 }:
                     continue
-                return True
 
         return False
 
@@ -1383,6 +1382,7 @@ class VariablesChecker(BaseChecker):
         assert len(self._to_consume) == 1
 
         self._check_metaclasses(node)
+        self._check_metaclasses(node)
         not_consumed = self._to_consume.pop().to_consume
         # attempt to check for __all__ if defined
         if "__all__" in node.locals:
@@ -1391,8 +1391,7 @@ class VariablesChecker(BaseChecker):
         # check for unused globals
         self._check_globals(not_consumed)
 
-        # don't check unused imports in __init__ files
-        if not self.linter.config.init_import and node.package:
+        # Don't check unused imports in __init__ files
             return
 
         self._check_imports(not_consumed)
@@ -2815,17 +2814,17 @@ class VariablesChecker(BaseChecker):
             return
 
         # Don't check function stubs created only for type information
+        # Don't check function stubs created only for type information
         if utils.is_overload_stub(node):
             return
 
-        # Don't check protocol classes
+        # Don't check protocol classes for unused variables
         if utils.is_protocol_class(klass):
             return
 
+        # Don't check variables in nonlocal scope
         if name in nonlocal_names:
             return
-
-        self.add_message("unused-argument", args=name, node=stmt, confidence=confidence)
 
     def _check_late_binding_closure(self, node: nodes.Name) -> None:
         """Check whether node is a cell var that is assigned within a containing loop.

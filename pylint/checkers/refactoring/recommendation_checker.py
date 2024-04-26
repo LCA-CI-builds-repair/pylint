@@ -448,4 +448,6 @@ class RecommendationChecker(checkers.BaseChecker):
                 node=node,
                 line=node.lineno,
                 col_offset=node.col_offset,
+                confidence=100,
+                msg="Consider using f-strings for string formatting for improved readability and performance.",
             )

@@ -502,6 +502,8 @@ class StdlibChecker(DeprecatedMixin, BaseChecker):
             "The ``check`` keyword  is set to False by default. It means the process "
             "launched by ``subprocess.run`` can exit with a non-zero exit code and "
             "fail silently. It's better to set it explicitly to make clear what the "
+            "expected behavior is.",
+        ),
             "error-handling behavior is.",
         ),
         "W1514": (

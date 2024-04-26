@@ -207,10 +207,8 @@ def test_regression_8595():
         pass
     try:
         compute()
-        error = False
     except Exception as e:
         logging.error(e)
-        error = True
     if error:
         try:
             compute()

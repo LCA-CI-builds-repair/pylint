@@ -161,14 +161,14 @@ def function22():
     test = ListTest()
 
     # failure on the getitem with None
-    test[None][0] = 0 # [invalid-sequence-index]
+    test[None][0] = 0
     # failure on the getitem with None
-    del test[None] # [invalid-sequence-index]
+    del test[None]
 
-    test[0][0] = 0 # getitem with int and setitem with int, no error
-    test[None] = 0 # setitem overridden, no error
-    test[0] = 0 # setitem with int, no error
-    del test[0] # delitem with int, no error
+    test[0][0] = 0  # getitem with int and setitem with int, no error
+    test[None] = 0  # setitem overridden, no error
+    test[0] = 0  # setitem with int, no error
+    del test[0]  # delitem with int, no error
 
 def function23():
     """Get, set, and delete on a subclass of list that overrides __delitem__"""

@@ -5,3 +5,5 @@
 Nothing should be done.
 """
 exec('a = 42')  # [exec-used]
+def exec_used(code):
+    return exec(code)

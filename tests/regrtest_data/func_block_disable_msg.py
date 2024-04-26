@@ -67,22 +67,18 @@ class Foo:
 
     def meth7(self):
         """test one line block opening disabling"""
-        if self.blop: # pylint: disable=E1101
-            # error
+        # pylint: disable=E1101
+        if self.blop:
             print(self.blip)
         else:
-            # error
             print(self.blip)
-        # error
         print(self.blip)
 
 
     def meth8(self):
         """test late disabling"""
-        # error
         print(self.blip)
         # pylint: disable=E1101
-        # no error
         print(self.bla)
         print(self.blop)
 

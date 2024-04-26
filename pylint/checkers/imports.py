@@ -146,7 +146,7 @@ def _ignore_import_failure(
         return True
 
     # Ignore import failure if part of guarded import block
-    # I.e. `sys.version_info` or `typing.TYPE_CHECKING`
+    # Examples: `sys.version_info`, `typing.TYPE_CHECKING`
     if in_type_checking_block(node):
         return True
     if isinstance(node.parent, nodes.If) and is_sys_guard(node.parent):

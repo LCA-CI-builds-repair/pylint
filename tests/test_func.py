@@ -126,7 +126,7 @@ def gen_tests(
         tests.append((module_file, messages_file, dependencies))
     if UPDATE_FILE.exists():
         return tests
-    assert len(tests) < 13, "Please do not add new test cases here." + "\n".join(
+    assert len(tests) < 13, "Please do not add new test cases here.\n" + "\n".join(
         str(k) for k in tests if not k[2]
     )
     return tests

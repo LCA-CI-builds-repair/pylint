@@ -79,7 +79,6 @@ from .no_self_argument.bla import lala1 # [no-name-in-module]
 # Check ignored-modules setting
 from argparse import THIS_does_not_EXIST
 
-
 # This captures the original failure in https://github.com/pylint-dev/pylint/issues/6497
 # only if numpy is installed. We are not installing numpy on CI (for now)
 from numpy.distutils.misc_util import is_sequence

@@ -780,8 +780,7 @@ class PyLinter(
         self.set_current_module(file.name, file.filepath)
         self._ignore_file = False
         self.file_state = FileState(file.modpath, self.msgs_store, module)
-        # fix the current file (if the source file was not available or
-        # if it's actually a c extension)
+        # Fix the current file if the source file is not available or if it's a c extension
         self.current_file = module.file
 
         try:

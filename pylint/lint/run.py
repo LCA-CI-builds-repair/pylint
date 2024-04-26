@@ -223,13 +223,7 @@ group are mutually exclusive.",
                 sys.exit(self.linter.msg_status or 1)
             elif score_value is not None:
                 if score_value >= linter.config.fail_under:
-                    sys.exit(0)
-                else:
-                    # We need to make sure we return a failing exit code in this case.
-                    # So we use self.linter.msg_status if that is non-zero, otherwise we just return 1.
-                    sys.exit(self.linter.msg_status or 1)
-            else:
-                sys.exit(self.linter.msg_status)
+sys.exit(self.linter.msg_status or 1 if self.linter.msg_status else 0)
 
 
 class _PylintConfigRun(Run):
