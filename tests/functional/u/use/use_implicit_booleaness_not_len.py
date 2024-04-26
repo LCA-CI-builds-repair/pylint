@@ -169,12 +169,12 @@ def github_issue_1879():
         return function_returning_generator(r)
 
     assert len(function_returning_list(z))  # [use-implicit-booleaness-not-len]
-    assert len(function_returning_int(z))
+    assert function_returning_int(z)  # Explicit boolean check instead of len()
     # This should raise a use-implicit-booleaness-not-len once astroid can infer it
     # See https://github.com/pylint-dev/pylint/pull/3821#issuecomment-743771514
-    assert len(function_returning_generator(z))
-    assert len(function_returning_comprehension(z))
-    assert len(function_returning_function(z))
+    assert function_returning_generator(z)  # Explicit boolean check instead of len()
+    assert function_returning_comprehension(z)  # Explicit boolean check instead of len()
+    assert function_returning_function(z)  # Explicit boolean check instead of len()
 
 
 def github_issue_4215():

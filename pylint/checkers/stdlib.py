@@ -499,7 +499,7 @@ class StdlibChecker(DeprecatedMixin, BaseChecker):
         "W1510": (
             "'subprocess.run' used without explicitly defining the value for 'check'.",
             "subprocess-run-check",
-            "The ``check`` keyword  is set to False by default. It means the process "
+            "The ``check`` keyword is set to False by default. It means the process "
             "launched by ``subprocess.run`` can exit with a non-zero exit code and "
             "fail silently. It's better to set it explicitly to make clear what the "
             "error-handling behavior is.",

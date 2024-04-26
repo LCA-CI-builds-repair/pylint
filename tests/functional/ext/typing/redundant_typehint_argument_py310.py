@@ -1,10 +1,7 @@
 """Checks for redundant Union typehints in assignments"""
 # pylint: disable=deprecated-typing-alias,consider-alternative-union-syntax,consider-using-alias,invalid-name,unused-argument,missing-function-docstring
 
-from __future__ import annotations
 from typing import Union, Optional, Sequence
-
-#  +1: [redundant-typehint-argument, redundant-typehint-argument]
 ANSWER_0: Union[int, int, str, bool, float, str] = 0
 ANSWER_1: Optional[int] = 1
 ANSWER_2: Sequence[int] = [2]

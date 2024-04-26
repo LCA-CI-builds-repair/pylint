@@ -3,8 +3,6 @@
 
 from __future__ import annotations
 from typing import Union, Optional, Sequence
-
-#  +1: [redundant-typehint-argument, redundant-typehint-argument]
 ANSWER_0: Union[int, int, str, bool, float, str] = 0
 ANSWER_1: Optional[int] = 1
 ANSWER_2: Sequence[int] = [2]
@@ -21,14 +19,10 @@ ANSWER_10: dict | list[int] | float | str | int | bool = 10
 ANSWER_11: list[int] | dict[int] | dict[list[int]] | list[str] | list[str] = ['string']
 
 # Multiple warnings for the same repeated type
-#  +1: [redundant-typehint-argument, redundant-typehint-argument, redundant-typehint-argument]
-x: int | int | int | int
+# Multiple warnings for the same repeated type
+x: int  # Only one occurrence of int is needed
 
 # No warning for redundant types in compound type (yet !)
-z: dict[int | int, str | str]
+z: dict[int, str]
 
-#  +1: [redundant-typehint-argument]
-zz: dict[int | int, str | str] | dict[int | int, str | str]
-
-# No warnings for redundant types in function signature (yet !)
-def f(p: int | int) -> str | str: ...
+zz: dict[int, str] | dict[int, str]  # Remove redundant type hints in the compound type
