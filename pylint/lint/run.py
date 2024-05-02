@@ -231,7 +231,6 @@ group are mutually exclusive.",
             else:
                 sys.exit(self.linter.msg_status)
 
-
 class _PylintConfigRun(Run):
     """A private wrapper for the 'pylint-config' command."""
 
