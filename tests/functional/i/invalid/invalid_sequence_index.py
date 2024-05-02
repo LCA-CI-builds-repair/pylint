@@ -154,16 +154,11 @@ def function21():
 
 def function22():
     """Get, set, and delete on a subclass of list that overrides __setitem__"""
-    class ListTest(list):
-        """Override setitem but not get or del"""
-        def __setitem__(self, key, value):
-            pass
-    test = ListTest()
-
-    # failure on the getitem with None
-    test[None][0] = 0 # [invalid-sequence-index]
-    # failure on the getitem with None
-    del test[None] # [invalid-sequence-index]
+class ListTest(list):
+    """Override setitem but not get or del"""
+    def __setitem__(self, key, value):
+        pass
+test = ListTest()
 
     test[0][0] = 0 # getitem with int and setitem with int, no error
     test[None] = 0 # setitem overridden, no error

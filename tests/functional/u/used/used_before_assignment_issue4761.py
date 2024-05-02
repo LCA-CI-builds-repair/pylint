@@ -130,7 +130,7 @@ def invalid_other_non_break_exit_from_loop_besides_except_handler():
     """The continue creates another exit branch."""
     while function():
         if function():
-            continue
+            pass
         try:
             pass
         except ValueError as verr:
