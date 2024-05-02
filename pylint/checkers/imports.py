@@ -151,7 +151,8 @@ def _ignore_import_failure(
         return True
     if isinstance(node.parent, nodes.If) and is_sys_guard(node.parent):
         return True
-
+    
+    return False
     return node_ignores_exception(node, ImportError)
 
 

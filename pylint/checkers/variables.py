@@ -915,6 +915,8 @@ scope_type : {self._atomic.scope_type}
 
             # Passed all tests for uncertain execution
             uncertain_nodes.append(other_node)
+            
+        return uncertain_nodes
         return uncertain_nodes
 
     @staticmethod
