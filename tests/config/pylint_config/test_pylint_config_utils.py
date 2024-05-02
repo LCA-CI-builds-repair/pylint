@@ -26,10 +26,6 @@ def test_retrying_user_input_validation(
         captured.out
         == """Answer should be one of i, ini, t, toml.
 Type 'exit()' if you want to exit the program.
-Answer should be one of i, ini, t, toml.
-Type 'exit()' if you want to exit the program.
-Answer should be one of i, ini, t, toml.
-Type 'exit()' if you want to exit the program.
 Stopping 'pylint-config'.
 """
     )
