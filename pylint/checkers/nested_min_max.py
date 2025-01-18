@@ -29,7 +29,9 @@ DICT_TYPES = (
 
 
 class NestedMinMaxChecker(BaseChecker):
-    """Multiple nested min/max calls on the same line will raise multiple messages.
+    """
+    Returns true if expression under min/max could be converted to splat
+    expression.Multiple nested min/max calls on the same line will raise multiple messages.
 
     This behaviour is intended as it would slow down the checker to check
     for nested call with minimal benefits.
